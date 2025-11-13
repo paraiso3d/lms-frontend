@@ -304,14 +304,7 @@ export default function Books() {
         return new Date(dateString).toLocaleDateString();
     };
 
-    const getStatusBadge = (status: Book['status']) => {
-        const statusOption = statusOptions.find(opt => opt.value === status);
-        return (
-            <Badge variant="outline" className={statusOption?.color}>
-                {statusOption?.label}
-            </Badge>
-        );
-    };
+
 
     // Generate page numbers for pagination
     const generatePageNumbers = () => {
@@ -412,11 +405,13 @@ export default function Books() {
                                     <TableCell className="font-mono text-sm">{book.book_id}</TableCell>
                                     <TableCell>
                                         {book.book_image ? (
+                                            <a href={book.ebook_link || '#'} target="_blank" rel="noopener noreferrer">
                                             <img
                                                 src={book.book_image}
                                                 alt={book.title}
                                                 className="w-12 h-16 object-cover rounded border"
                                             />
+                                            </a>
                                         ) : (
                                             <div className="w-12 h-16 bg-gray-200 rounded flex items-center justify-center text-gray-400">
                                                 <ImageIcon className="w-6 h-6" />
@@ -437,7 +432,7 @@ export default function Books() {
                                     <TableCell>{book.author}</TableCell>
                                     <TableCell className="font-mono text-sm">{book.isbn || '-'}</TableCell>
                                     <TableCell>
-                                        {getStatusBadge(book.status)}
+                                        {book.status}
                                     </TableCell>
                                     <TableCell>{book.date_published ? formatDate(book.date_published) : '-'}</TableCell>
                                     <TableCell>{formatDate(book.date_modified)}</TableCell>
