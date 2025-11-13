@@ -174,6 +174,7 @@ export default function DashboardHome() {
                 <p className="text-gray-600">Welcome to your library management system</p>
             </div>
 
+
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {stats.map((stat) => {
@@ -196,41 +197,9 @@ export default function DashboardHome() {
                 })}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Recent Activity</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p className="text-gray-500 text-center py-8">No recent activity</p>
-                    </CardContent>
-                </Card>
-
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Quick Stats</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <div className="space-y-4">
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600">Books Added Today</span>
-                                <span className="text-gray-900">0</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600">Books Borrowed Today</span>
-                                <span className="text-gray-900">0</span>
-                            </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-gray-600">Books Returned Today</span>
-                                <span className="text-gray-900">0</span>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
 
             {/* Categories Section */}
-            <Card>
+            <Card className='mb-6'>
                 <CardHeader className="flex flex-row items-center justify-between">
                     <CardTitle>Categories Management</CardTitle>
                     <Button onClick={() => setShowForm(true)}>
@@ -345,6 +314,41 @@ export default function DashboardHome() {
                     </div>
                 </CardContent>
             </Card>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Recent Activity</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p className="text-gray-500 text-center py-8">No recent activity</p>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Quick Stats</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <div className="space-y-4">
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-600">Books Added Today</span>
+                                <span className="text-gray-900">0</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-600">Books Borrowed Today</span>
+                                <span className="text-gray-900">0</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                                <span className="text-gray-600">Books Returned Today</span>
+                                <span className="text-gray-900">0</span>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
+            </div>
+
+
         </div>
     );
 }
