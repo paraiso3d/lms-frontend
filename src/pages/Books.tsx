@@ -405,7 +405,7 @@ export default function Books() {
                                     <TableCell className="font-mono text-sm">{book.book_id}</TableCell>
                                     <TableCell>
                                         {book.book_image ? (
-                                            <a href={book.ebook_link || '#'} target="_blank" rel="noopener noreferrer">
+                                            <a href={book.ebook_link} target="_blank" rel="noopener noreferrer">
                                             <img
                                                 src={book.book_image}
                                                 alt={book.title}
@@ -431,7 +431,7 @@ export default function Books() {
                                     <TableCell>{book.category_name}</TableCell>
                                     <TableCell>{book.author}</TableCell>
                                     <TableCell className="font-mono text-sm">{book.isbn || '-'}</TableCell>
-                                    <TableCell>
+                                    <TableCell >
                                         {book.status}
                                     </TableCell>
                                     <TableCell>{book.date_published ? formatDate(book.date_published) : '-'}</TableCell>
